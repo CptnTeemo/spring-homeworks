@@ -36,12 +36,15 @@
             <tr>
                 <td>
                     <input type="text" placeholder="author" th:field="*{author}">
+                    <p th:if="${#fields.hasErrors()}">field value mustn't be empty</p>
                 </td>
                 <td>
                     <input type="text" placeholder="book_title" th:field="*{title}">
+                    <p th:if="${#fields.hasErrors()}">field value mustn't be empty</p>
                 </td>
                 <td>
                     <input type="text" placeholder="size (pages)" th:field="*{size}">
+                    <p th:if="${#fields.hasErrors()}">field value mast be digit and less than 4 signs</p>
                 </td>
                 <td>
                     <input type="submit" value="save">
@@ -50,53 +53,46 @@
         </table>
     </form>
 
-    <form method="post" th:action="@{/books/remove}">
+    <form method="post" th:action="@{/books/remove}" th:object="${bookIdToRemove}">
         <table>
             <tr>
                 <td>
-                    <input type="text" placeholder="id number" th:name="bookIdToRemove">
+                    <input type="text" placeholder="id number" th:field="*{id}">
                 </td>
                 <td>
                     <input type="submit" value="remove">
                 </td>
-            </tr>
-        </table>
-    </form>
-
-    <form method="post" th:action="@{/books/removeByAuthor}">
-        <table>
-            <tr>
-                <td>
-                    <input type="text" placeholder="author name" th:name="authorNameToRemove">
-                </td>
-                <td>
-                    <input type="submit" value="remove by author">
+                <td th:if="${#fields.hasErrors()}">
+                    <p>Wrong id or not found</p>
                 </td>
             </tr>
         </table>
     </form>
 
-    <form method="post" th:action="@{/books/removeBySize}">
+    <form method="post" th:action="@{/books/removeByRegex}" th:object="${queryRegexToRemove}">
         <table>
             <tr>
                 <td>
-                    <input type="text" placeholder="size" th:name="bookSizeToRemove">
-                </td>
-                <td>
-                    <input type="submit" value="remove by size">
-                </td>
-            </tr>
-        </table>
-    </form>
-
-    <form method="post" th:action="@{/books/removeByRegex}">
-        <table>
-            <tr>
-                <td>
-                    <input type="text" placeholder="regex" th:name="queryRegex">
+                    <input type="text" placeholder="regex" th:field="*{queryRegex}">
                 </td>
                 <td>
                     <input type="submit" value="remove by regex">
+                </td>
+                <td th:if="${#fields.hasErrors()}">
+                    <p>Wrong author, title or id to remove</p>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <form method="post" th:action="@{/books/uploadFile}" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td>
+                    <input type="file" name="file" />
+                </td>
+                <td>
+                    <input type="submit" value="Upload"/>
                 </td>
             </tr>
         </table>
