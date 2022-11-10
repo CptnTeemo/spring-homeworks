@@ -2,30 +2,30 @@ package com.example.MyBookShopApp.data;
 
 public class Author {
 
-    private String firstName;
-    private String lastName;
+    private Integer id;
+    private String authorName;
 
     @Override
     public String toString() {
         return "Author{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+                "id=" + id +
+                ", authorName='" + authorName + '\'' +
                 '}';
     }
 
-    public String getFirstName() {
-        return firstName;
+    public Integer getId() {
+        return id;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getLastName() {
-        return lastName;
+    public String getAuthorName() {
+        return authorName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setAuthorName(String authorName) {
+        this.authorName = authorName;
     }
 }

@@ -24,6 +24,7 @@ public class AuthorsPageController {
 
     @ModelAttribute("authorsMap")
     public Map<String, List<Author>> authorsMap() {
+        authorService.fillingAuthorsTable();
         return authorService.getAuthorsMap();
     }
 
