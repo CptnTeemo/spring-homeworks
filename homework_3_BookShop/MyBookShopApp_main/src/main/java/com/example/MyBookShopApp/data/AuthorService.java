@@ -13,35 +13,22 @@ import java.util.stream.Collectors;
 @Service
 public class AuthorService {
 
-    private final JdbcTemplate jdbcTemplate;
-    private final BookService bookService;
+    private JdbcTemplate jdbcTemplate;
 
     @Autowired
-    public AuthorService(JdbcTemplate jdbcTemplate, BookService bookService) {
+    public AuthorService(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
-        this.bookService = bookService;
-    }
-
-    public void fillingAuthorsTable() {
-        List<Book> books = bookService.getBooksData();
-        books.forEach(book -> {
-            jdbcTemplate.update(
-                    "INSERT INTO authors (id) VALUES (?)", book.getId()
-            );
-        });
     }
 
     public Map<String, List<Author>> getAuthorsMap() {
-        List<Author> authors = jdbcTemplate.query("SELECT * FROM AUTHORS a JOIN BOOKS b on a.id = b.id",
-                (ResultSet rs, int rowNum) -> {
-                    Author author = new Author();
-                    author.setAuthorName(rs.getString("author"));
-                    return author;
-                });
-        return authors.stream()
-                .collect(Collectors.groupingBy((a) -> {
-                    String[] fullName = a.getAuthorName().split(" ");
-                    return fullName[1].substring(0, 1);
-                }));
+        List<Author> authors = jdbcTemplate.query("SELECT * FROM authors",(ResultSet rs, int rowNum) -> {
+            Author author = new Author();
+            author.setId(rs.getInt("id"));
+            author.setFirstName(rs.getString("first_name"));
+            author.setLastName(rs.getString("last_name"));
+            return author;
+        });
+
+        return authors.stream().collect(Collectors.groupingBy((Author a) -> {return a.getLastName().substring(0,1);}));
     }
 }

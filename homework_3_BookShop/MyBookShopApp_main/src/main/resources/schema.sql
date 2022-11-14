@@ -10,9 +10,18 @@ CREATE TABLE books
     price    VARCHAR(250) DEFAULT NULL
 );
 
+-- create table books (
+--                        id       INT AUTO_INCREMENT PRIMARY KEY,
+--                       author VARCHAR(50),
+--                       title VARCHAR(50),
+--                       email VARCHAR(50),
+--                       priceOld INT,
+--                       price INT
+-- );
+
 create table authors
 (
-    id         INT AUTO_INCREMENT PRIMARY KEY
---     first_name VARCHAR(50),
---     last_name  VARCHAR(50)
+    id         INT,
+    first_name VARCHAR(50),
+    last_name  VARCHAR(50)
 );

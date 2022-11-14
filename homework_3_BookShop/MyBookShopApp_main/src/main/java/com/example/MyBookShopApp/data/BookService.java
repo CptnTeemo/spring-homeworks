@@ -11,7 +11,7 @@ import java.util.List;
 @Service
 public class BookService {
 
-    private final JdbcTemplate jdbcTemplate;
+    private JdbcTemplate jdbcTemplate;
 
     @Autowired
     public BookService(JdbcTemplate jdbcTemplate) {
@@ -25,7 +25,9 @@ public class BookService {
             book.setAuthor(rs.getString("author"));
             book.setTitle(rs.getString("title"));
             book.setPriceOld(rs.getString("priceOld"));
+//            book.setPriceOld(rs.getInt("priceOld"));
             book.setPrice(rs.getString("price"));
+//            book.setPrice(rs.getInt("price"));
             return book;
         });
         return new ArrayList<>(books);
