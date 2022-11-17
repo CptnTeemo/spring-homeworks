@@ -1,5 +1,7 @@
 package com.example.MyBookShopApp.data.model.book.review;
 
+import com.example.MyBookShopApp.data.model.user.UserEntity;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
@@ -14,7 +16,7 @@ public class BookReviewLikeEntity {
     @Column(columnDefinition = "INT NOT NULL")
     private int reviewId;
 
-    @Column(columnDefinition = "INT NOT NULL")
+    @Column(name = "user_id", columnDefinition = "INT NOT NULL")
     private int userId;
 
     @Column(columnDefinition = "TIMESTAMP NOT NULL")
@@ -22,6 +24,10 @@ public class BookReviewLikeEntity {
 
     @Column(columnDefinition = "SMALLINT NOT NULL")
     private short value;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id", insertable = false, updatable = false)
+    private UserEntity user;
 
     public int getId() {
         return id;
@@ -61,5 +67,13 @@ public class BookReviewLikeEntity {
 
     public void setValue(short value) {
         this.value = value;
+    }
+
+    public UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(UserEntity user) {
+        this.user = user;
     }
 }

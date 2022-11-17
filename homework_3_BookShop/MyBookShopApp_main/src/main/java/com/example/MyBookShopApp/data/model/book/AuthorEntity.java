@@ -23,6 +23,12 @@ public class AuthorEntity {
     @Column(columnDefinition = "TEXT")
     private String description;
 
+    @ManyToMany
+    @JoinTable(name = "book2author",
+            joinColumns = @JoinColumn(name = "author_id"),
+            inverseJoinColumns = @JoinColumn(name = "book_id"))
+    List<BookEntity> bookEntityList;
+
     public Integer getId() {
         return id;
     }
@@ -61,5 +67,13 @@ public class AuthorEntity {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public List<BookEntity> getBookEntityList() {
+        return bookEntityList;
+    }
+
+    public void setBookEntityList(List<BookEntity> bookEntityList) {
+        this.bookEntityList = bookEntityList;
     }
 }

@@ -14,7 +14,7 @@ public class UserContactEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(columnDefinition = "INT NOT NULL")
+    @Column(name = "user_id",columnDefinition = "INT NOT NULL")
     private int userId;
 
     private ContactType type;
@@ -33,6 +33,9 @@ public class UserContactEntity {
 
     @Column(columnDefinition = "VARCHAR(255) NOT NULL")
     private String contact;
+
+    @OneToOne(mappedBy = "userContact")
+    private UserEntity user;
 
     public int getId() {
         return id;
@@ -96,5 +99,13 @@ public class UserContactEntity {
 
     public void setContact(String contact) {
         this.contact = contact;
+    }
+
+    public UserEntity getUser() {
+        return user;
+    }
+
+    public void setUser(UserEntity user) {
+        this.user = user;
     }
 }

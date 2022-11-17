@@ -1,6 +1,9 @@
 package com.example.MyBookShopApp.data.model.genre;
 
+import com.example.MyBookShopApp.data.model.book.BookEntity;
+
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "genre")
@@ -18,6 +21,9 @@ public class GenreEntity {
 
     @Column(columnDefinition = "VARCHAR(255) NOT NULL")
     private String name;
+
+    @ManyToMany(mappedBy = "genreEntityList")
+    private List<BookEntity> bookEntityList;
 
     public int getId() {
         return id;
@@ -49,5 +55,13 @@ public class GenreEntity {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<BookEntity> getBookEntityList() {
+        return bookEntityList;
+    }
+
+    public void setBookEntityList(List<BookEntity> bookEntityList) {
+        this.bookEntityList = bookEntityList;
     }
 }

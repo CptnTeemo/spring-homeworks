@@ -1,12 +1,13 @@
 package com.example.MyBookShopApp.service;
 
 import com.example.MyBookShopApp.data.Author;
-import com.example.MyBookShopApp.data.AuthorRepository;
+import com.example.MyBookShopApp.repository.AuthorRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.sql.ResultSet;
-import java.util.*;
+import java.util.List;
+import java.util.Map;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 @Service

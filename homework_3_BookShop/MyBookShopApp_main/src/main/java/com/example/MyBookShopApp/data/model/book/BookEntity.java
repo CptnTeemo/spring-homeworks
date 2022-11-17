@@ -1,7 +1,11 @@
 package com.example.MyBookShopApp.data.model.book;
 
+import com.example.MyBookShopApp.data.model.genre.GenreEntity;
+import com.example.MyBookShopApp.data.model.user.UserEntity;
+
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "book")
@@ -27,6 +31,39 @@ public class BookEntity {
     private Integer price;
     @Column(columnDefinition = "INT NOT NULL DEFAULT 0")
     private Integer discount;
+
+    @ManyToMany(mappedBy = "bookEntityList")
+    private List<AuthorEntity> authorEntityList;
+
+    @ManyToMany
+    @JoinTable(name = "boo2genre",
+            joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "genre_id"))
+    private List<GenreEntity> genreEntityList;
+
+    @ManyToMany
+    @JoinTable(name = "book2user",
+            joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private List<UserEntity> userEntityList;
+
+    @ManyToMany
+    @JoinTable(name = "file_download",
+            joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private List<UserEntity> userEntityListByFile;
+
+    @ManyToMany
+    @JoinTable(name = "balance_transaction",
+            joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private List<UserEntity> userEntityListByBalanceTransaction;
+
+    @ManyToMany
+    @JoinTable(name = "book_review",
+            joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "user_id"))
+    private List<UserEntity> userListReview;
 
     public Integer getId() {
         return id;
@@ -98,5 +135,53 @@ public class BookEntity {
 
     public void setDiscount(Integer discount) {
         this.discount = discount;
+    }
+
+    public List<AuthorEntity> getAuthorEntityList() {
+        return authorEntityList;
+    }
+
+    public void setAuthorEntityList(List<AuthorEntity> authorEntityList) {
+        this.authorEntityList = authorEntityList;
+    }
+
+    public List<GenreEntity> getGenreEntityList() {
+        return genreEntityList;
+    }
+
+    public void setGenreEntityList(List<GenreEntity> genreEntityList) {
+        this.genreEntityList = genreEntityList;
+    }
+
+    public List<UserEntity> getUserEntityList() {
+        return userEntityList;
+    }
+
+    public void setUserEntityList(List<UserEntity> userEntityList) {
+        this.userEntityList = userEntityList;
+    }
+
+    public List<UserEntity> getUserEntityListByFile() {
+        return userEntityListByFile;
+    }
+
+    public void setUserEntityListByFile(List<UserEntity> userEntityListByFile) {
+        this.userEntityListByFile = userEntityListByFile;
+    }
+
+    public List<UserEntity> getUserEntityListByBalanceTransaction() {
+        return userEntityListByBalanceTransaction;
+    }
+
+    public void setUserEntityListByBalanceTransaction(List<UserEntity> userEntityListByBalanceTransaction) {
+        this.userEntityListByBalanceTransaction = userEntityListByBalanceTransaction;
+    }
+
+    public List<UserEntity> getUserListReview() {
+        return userListReview;
+    }
+
+    public void setUserListReview(List<UserEntity> userListReview) {
+        this.userListReview = userListReview;
     }
 }
