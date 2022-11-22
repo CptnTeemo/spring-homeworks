@@ -26,9 +26,9 @@
             </h1>
             <div class="Section">
                 <div class="search">
-                    <form class="form form_search" action="#" method="post" data-searchlimit="20">
+                    <form class="form form_search" action="#" method="post" data-searchlimit="5">
                         <input class="search-input" id="querypage" name="querypage" type="text"
-                               placeholder="Search over 30 million book titles" value="Техника"/>
+                               placeholder="Search over 30 million book titles" th:value="${searchWordDto.example}" value="Техника"/>
                         <button class="search-button" type="submit" name="searchpage" id="searchpage" th:text="#{topbar.search}">Поиск
                         </button>
                     </form>
@@ -36,7 +36,8 @@
             </div>
             <div class="Section Section_close">
                 <header class="Section-header">
-                    <h2 class="Section-title Middle-searchHeader" th:text="#{search.found}">Найдено 40 книг
+                    <h2 class="Section-title Middle-searchHeader"
+                        th:text="#{search.found}+ ': ' + ${searchResults.size()}">Найдено 40 книг
                     </h2>
                 </header>
                 <div class="Cards Cards_refresh"

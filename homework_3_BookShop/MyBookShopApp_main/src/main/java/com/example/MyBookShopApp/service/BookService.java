@@ -1,28 +1,32 @@
 package com.example.MyBookShopApp.service;
 
 import com.example.MyBookShopApp.data.Book;
-import com.example.MyBookShopApp.data.BookRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Service;
+import org.springframework.data.domain.Page;
 
-import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.Collection;
+import java.time.LocalDate;
 import java.util.List;
 
-@Service
-public class BookService {
+public interface BookService {
 
-    private BookRepository bookRepository;
+    List<Book> getBooksData();
 
-    @Autowired
-    public BookService(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
-    }
+    List<Book> getBooksByAuthor(String authorName);
 
-    public List<Book> getBooksData() {
-        return new ArrayList<>(bookRepository.findAll());
-    }
+    List<Book> getBooksByTitle(String title);
+
+    List<Book> getBooksWithPriceBetween(Integer min, Integer max);
+
+    List<Book> getBooksWithPrice(Integer price);
+
+    List<Book> getBooksWithMaxDiscount();
+
+    List<Book> getBestsellers();
+
+    Page<Book> getPageOfRecommendedBooks(Integer offset, Integer limit);
+
+    Page<Book> getPageOfSearchResultBooks(String searchWord, Integer offset, Integer limit);
+
+    Page<Book> getPageOfRecentListBooks(LocalDate from, LocalDate to, Integer offset, Integer limit);
+
 
 }

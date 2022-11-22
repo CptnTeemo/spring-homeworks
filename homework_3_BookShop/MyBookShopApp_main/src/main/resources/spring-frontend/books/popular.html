@@ -30,8 +30,42 @@
                     <h1 class="Section-title" th:text="#{topbar.popular}">Популярное
                     </h1>
                 </div>
-                <div class="Cards Cards_refresh"
-                     th:replace="~{fragments/books_pool_fragment :: pool(category=#{topbar.popular})}"></div>
+                <div class="Cards Cards_refresh">
+                    <div class="Card" th:each="book : ${popularBooks}">
+                        <div class="Card-picture"><a href="#" th:href="${book.id}">
+                            <img th:src="${book.image}" alt="card.jpg"/></a>
+                        </div>
+                        <div class="Card-content">
+                            <strong class="Card-title"><a href="#"
+                                                          th:text="${book.title}">Техника</a>
+                            </strong>
+                            <div class="Card-description" th:text="${book.description}">Кондратенко Александр Петрович
+                            </div>
+                            <div class="Card-cost">
+                                <span th:class="${#strings.length(book.price) == 0}  ? Card-price : Card-priceOld" th:text="${book.priceOld}">₽300.00</span>
+                                <span th:if="${#strings.length(book.price) > 0}" class="Card-price" th:text="${book.price}">₽190.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Card">
+                        <div class="Card-picture"><a href="#"><img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a><a
+                                class="Card-status" title="Отложена"><img src="/assets/img/icons/heart.svg" alt="heart.svg"/></a>
+                        </div>
+                        <div class="Card-content">
+                            <strong class="Card-title"><a href="#">Большое путешествие по телу человека</a>
+                            </strong>
+                            <div class="Card-description">Джон Фарндон
+                            </div>
+                            <div class="Card-cost"><span class="Card-price">₽900.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="Cards-footer Cards-footer_center"><a class="btn btn_primary" href="#"
+                                                                     data-refreshshow="popular"
+                                                                     data-refreshoffset="0" data-refreshlimit="5"
+                                                                     th:text="#{popular.showmore}">Показать еще</a>
+                    </div>
+                </div>
             </div>
         </main>
     </div>

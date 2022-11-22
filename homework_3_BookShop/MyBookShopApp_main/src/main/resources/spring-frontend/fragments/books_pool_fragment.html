@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <div class="Cards Cards_refresh" th:fragment="pool">
-    <div class="Card" th:each="book : ${booksList}">
+    <div class="Card" th:each="book : ${searchResults}">
         <div class="Card-picture"><a href="#" th:href="${book.id}">
-            <img src="/assets/img/content/main/card.jpg" alt="card.jpg"/></a>
+            <img th:src="${book.image}" alt="card.jpg"/></a>
         </div>
         <div class="Card-content">
             <strong class="Card-title"><a href="#"
                                           th:text="${book.title}">Техника</a>
             </strong>
-            <div class="Card-description" th:text="${book.author}">Кондратенко Александр Петрович
+            <div class="Card-description" th:text="${book.description}">Кондратенко Александр Петрович
             </div>
             <div class="Card-cost">
                 <span th:class="${#strings.length(book.price) == 0}  ? Card-price : Card-priceOld" th:text="${book.priceOld}">₽300.00</span>
@@ -271,8 +271,11 @@
             </div>
         </div>
     </div>
-    <div class="Cards-footer Cards-footer_center"><a class="btn btn_primary" href="#" th:attr="data-refreshshow = ${category}" data-refreshshow="recent"
-                                                     data-refreshoffset="20" data-refreshlimit="20" th:text="#{popular.showmore}">Показать еще</a>
+    <div class="Cards-footer Cards-footer_center"><a class="btn btn_primary" href="#"
+                                                     th:attr="data-refreshquery = ${searchWordDto.example}"
+                                                     data-refreshshow="search"
+                                                     data-refreshoffset="0" data-refreshlimit="5"
+                                                     th:text="#{popular.showmore}">Показать еще</a>
     </div>
 </div>
 </html>
