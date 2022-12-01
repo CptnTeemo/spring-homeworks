@@ -8,4 +8,6 @@ import java.util.Map;
 public interface AuthorService {
 
     Map<String, List<Author>> getAuthorsMap();
+
+    Author getAuthorData(String lastName, String firstName);
 }

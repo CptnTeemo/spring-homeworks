@@ -27,4 +27,9 @@ public class AuthorServiceImpl implements com.example.MyBookShopApp.service.Auth
         return new TreeMap<>(authors.stream()
                 .collect(Collectors.groupingBy((Author a) -> {return a.getLastName().substring(0,1);})));
     }
+
+    @Override
+    public Author getAuthorData(String lastName, String firstName) {
+        return authorRepository.getAuthorDataByName(lastName, firstName);
+    }
 }

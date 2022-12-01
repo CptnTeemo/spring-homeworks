@@ -35,11 +35,11 @@ public class BookEntity {
     @ManyToMany(mappedBy = "bookEntityList")
     private List<AuthorEntity> authorEntityList;
 
-    @ManyToMany
-    @JoinTable(name = "boo2genre",
-            joinColumns = @JoinColumn(name = "book_id"),
-            inverseJoinColumns = @JoinColumn(name = "genre_id"))
-    private List<GenreEntity> genreEntityList;
+//    @ManyToMany
+//    @JoinTable(name = "book2genre",
+//            joinColumns = @JoinColumn(name = "book_id"),
+//            inverseJoinColumns = @JoinColumn(name = "genre_id"))
+//    private List<GenreEntity> genres;
 
     @ManyToMany
     @JoinTable(name = "book2user",
@@ -145,13 +145,13 @@ public class BookEntity {
         this.authorEntityList = authorEntityList;
     }
 
-    public List<GenreEntity> getGenreEntityList() {
-        return genreEntityList;
-    }
-
-    public void setGenreEntityList(List<GenreEntity> genreEntityList) {
-        this.genreEntityList = genreEntityList;
-    }
+//    public List<GenreEntity> getGenres() {
+//        return genres;
+//    }
+//
+//    public void setGenres(List<GenreEntity> genres) {
+//        this.genres = genres;
+//    }
 
     public List<UserEntity> getUserEntityList() {
         return userEntityList;

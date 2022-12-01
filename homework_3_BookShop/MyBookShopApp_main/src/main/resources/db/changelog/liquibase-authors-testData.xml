@@ -1,0 +1,28 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Alexandr" id="data for authors">
+        <sql>
+            insert into authors (id, first_name, last_name) values (1, 'Debi', 'Fergie');
+            insert into authors (id, first_name, last_name) values (2, 'Will', 'Mattacks');
+            insert into authors (id, first_name, last_name) values (3, 'Conant', 'Braizier');
+            insert into authors (id, first_name, last_name) values (4, 'Helaina', 'Teodoro');
+            insert into authors (id, first_name, last_name) values (5, 'Melli', 'Hounsham');
+            insert into authors (id, first_name, last_name) values (6, 'Onfre', 'Pilpovic');
+            insert into authors (id, first_name, last_name) values (7, 'Lucinda', 'Golborn');
+            insert into authors (id, first_name, last_name) values (8, 'Judah', 'Pennaman');
+            insert into authors (id, first_name, last_name) values (9, 'Howie', 'Spritt');
+            insert into authors (id, first_name, last_name) values (10, 'Sayers', 'Stubbings');
+            insert into authors (id, first_name, last_name) values (11, 'Vinita', 'Zylbermann');
+            insert into authors (id, first_name, last_name) values (12, 'Elissa', 'Seawright');
+            insert into authors (id, first_name, last_name) values (13, 'Page', 'Collin');
+            insert into authors (id, first_name, last_name) values (14, 'Randene', 'Seel');
+            insert into authors (id, first_name, last_name) values (15, 'Marshall', 'Balding');
+            insert into authors (id, first_name, last_name) values (16, 'Brose', 'McIndrew');
+            insert into authors (id, first_name, last_name) values (17, 'Hube', 'Stendall');
+            insert into authors (id, first_name, last_name) values (18, 'Der', 'Berryann');
+            insert into authors (id, first_name, last_name) values (19, 'Ange', 'Van Weedenburg');
+            insert into authors (id, first_name, last_name) values (20, 'Sara', 'Golden of Ireland');
+            insert into authors (id, first_name, last_name) values (21, 'Kalli', 'Comley');
+        </sql>
+    </changeSet>
+</databaseChangeLog>

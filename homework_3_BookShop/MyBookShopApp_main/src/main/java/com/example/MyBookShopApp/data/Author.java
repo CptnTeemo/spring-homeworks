@@ -21,6 +21,9 @@ public class Author {
     @ApiModelProperty(value = "last name of author", example = "Bakon", position = 3)
     private String lastName;
 
+    @Column(columnDefinition = "TEXT")
+    private String description;
+
     @OneToMany(mappedBy = "author")
     @JsonIgnore
     private List<Book> bookList = new ArrayList<>();
@@ -60,5 +63,13 @@ public class Author {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }

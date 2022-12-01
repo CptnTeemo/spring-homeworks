@@ -67,8 +67,14 @@ public class BookServiceImpl implements com.example.MyBookShopApp.service.BookSe
         return bookRepository.findBooksByPubDateBetween(from, to, nextPage);
     }
 
-//    public List<Book> getSOmeBooksByPubDate() {
-//        return bookRepository.getBooksByPubDateBetween();
-//    }
+    public List<Book> getBooksPageByAuthorFullName(String lastName, String firstName,
+                                                   Integer offset, Integer limit) {
+        Pageable nextPage = PageRequest.of(offset, limit);
+        return new ArrayList<>(bookRepository.getPageBooksByAuthor(lastName, firstName, nextPage).getContent());
+    }
+
+    public List<Book> getBooksByAuthorFullName(String lastName, String firstName) {
+        return bookRepository.getAllBooksByAuthor(lastName, firstName);
+    }
 
 }

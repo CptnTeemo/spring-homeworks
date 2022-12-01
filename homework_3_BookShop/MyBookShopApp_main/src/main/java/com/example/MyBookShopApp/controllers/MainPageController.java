@@ -3,7 +3,9 @@ package com.example.MyBookShopApp.controllers;
 import com.example.MyBookShopApp.data.Book;
 import com.example.MyBookShopApp.data.dto.BooksPageDto;
 import com.example.MyBookShopApp.data.dto.SearchWordDto;
+import com.example.MyBookShopApp.data.model.book.TagEntity;
 import com.example.MyBookShopApp.service.BookService;
+import com.example.MyBookShopApp.service.TagService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,15 +18,22 @@ import java.util.List;
 public class MainPageController {
 
     private final BookService bookService;
+    private final TagService tagService;
 
     @Autowired
-    public MainPageController(BookService bookService) {
+    public MainPageController(BookService bookService, TagService tagService) {
         this.bookService = bookService;
+        this.tagService = tagService;
     }
 
     @ModelAttribute("recommendedBooks")
     public List<Book> recommendedBooks(){
         return bookService.getPageOfRecommendedBooks(0, 6).getContent();
+    }
+
+    @ModelAttribute("tagsList")
+    public List<TagEntity> getTags() {
+        return tagService.getAllTags();
     }
 
     @ModelAttribute("searchWordDto")

@@ -1,20 +1,21 @@
 package com.example.MyBookShopApp.data.model.genre;
 
-import com.example.MyBookShopApp.data.model.book.BookEntity;
+import com.example.MyBookShopApp.data.Book;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
 @Table(name = "genre")
-public class GenreEntity {
+public class GenreEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(columnDefinition = "INT")
-    private int parentId;
+    private Integer parentId;
 
     @Column(columnDefinition = "VARCHAR(255) NOT NULL")
     private String slug;
@@ -23,7 +24,11 @@ public class GenreEntity {
     private String name;
 
     @ManyToMany(mappedBy = "genreEntityList")
-    private List<BookEntity> bookEntityList;
+    @JsonIgnore
+    private List<Book> bookEntityList;
+
+//    @ManyToMany(mappedBy = "genres")
+//    private List<BookEntity> books;
 
     public int getId() {
         return id;
@@ -33,11 +38,11 @@ public class GenreEntity {
         this.id = id;
     }
 
-    public int getParentId() {
+    public Integer getParentId() {
         return parentId;
     }
 
-    public void setParentId(int parentId) {
+    public void setParentId(Integer parentId) {
         this.parentId = parentId;
     }
 
@@ -57,11 +62,19 @@ public class GenreEntity {
         this.name = name;
     }
 
-    public List<BookEntity> getBookEntityList() {
+    public List<Book> getBookEntityList() {
         return bookEntityList;
     }
 
-    public void setBookEntityList(List<BookEntity> bookEntityList) {
+    public void setBookEntityList(List<Book> bookEntityList) {
         this.bookEntityList = bookEntityList;
     }
+
+//    public List<BookEntity> getBooks() {
+//        return books;
+//    }
+//
+//    public void setBooks(List<BookEntity> books) {
+//        this.books = books;
+//    }
 }

@@ -12,6 +12,8 @@ public interface BookService {
 
     List<Book> getBooksByAuthor(String authorName);
 
+    List<Book> getBooksByAuthorFullName(String firstName, String lastName);
+
     List<Book> getBooksByTitle(String title);
 
     List<Book> getBooksWithPriceBetween(Integer min, Integer max);
@@ -28,5 +30,5 @@ public interface BookService {
 
     Page<Book> getPageOfRecentListBooks(LocalDate from, LocalDate to, Integer offset, Integer limit);
 
-
+    List<Book> getBooksPageByAuthorFullName(String lastName, String firstName, Integer offset, Integer limit);
 }

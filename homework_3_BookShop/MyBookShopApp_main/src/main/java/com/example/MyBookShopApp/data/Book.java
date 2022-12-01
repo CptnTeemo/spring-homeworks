@@ -1,5 +1,7 @@
 package com.example.MyBookShopApp.data;
 
+import com.example.MyBookShopApp.data.model.book.TagEntity;
+import com.example.MyBookShopApp.data.model.genre.GenreEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
@@ -7,6 +9,7 @@ import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -63,6 +66,18 @@ public class Book implements Comparable<Book>{
     @JoinColumn(name = "author_id", referencedColumnName = "id")
     @JsonIgnore
     private Author author;
+
+    @ManyToOne
+    @JoinColumn(name = "tag_id", referencedColumnName = "id")
+    @JsonIgnore
+    private TagEntity tag;
+
+    @ManyToMany
+    @JoinTable(name = "book2genre",
+            joinColumns = @JoinColumn(name = "book_id"),
+            inverseJoinColumns = @JoinColumn(name = "genre_id"))
+    @JsonIgnore
+    private List<GenreEntity> genreEntityList;
 
     public Integer getId() {
         return id;
@@ -176,8 +191,33 @@ public class Book implements Comparable<Book>{
         this.popular = popular;
     }
 
+    public TagEntity getTag() {
+        return tag;
+    }
+
+    public void setTag(TagEntity tag) {
+        this.tag = tag;
+    }
+
     @Override
     public int compareTo(Book otherBook) {
         return this.popular.compareTo(otherBook.getPopular());
+    }
+
+    public List<GenreEntity> getGenreEntityList() {
+        return genreEntityList;
+    }
+
+    public void setGenreEntityList(List<GenreEntity> genreEntityList) {
+        this.genreEntityList = genreEntityList;
+    }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", author=" + author +
+                ", tag=" + tag +
+                '}';
     }
 }
