@@ -24,7 +24,7 @@
         <main class="Middle-main" th:object="${authorName}">
             <ul class="breadcrumbs"
                 th:replace="~{fragments/breadcrumb_fragment :: breadcrumps(category=${authorName})}"></ul>
-<!--            <div th:replace="~{fragments/author_article_fragment :: article(author=${authorName})}"></div>-->
+            <!--            <div th:replace="~{fragments/author_article_fragment :: article(author=${authorName})}"></div>-->
             <div>
                 <h1 class="Middle-title" th:text="${authorName}">Борис Васильевич Бедный
                 </h1>
@@ -92,16 +92,16 @@
                     </div>
                 </article>
             </div>
-<!--            <div class="Section"-->
-<!--                 th:replace="~{fragments/book_slider_fragment :: bookSlider(title='Книги автора')}"></div>-->
+            <!--            <div class="Section"-->
+            <!--                 th:replace="~{fragments/book_slider_fragment :: bookSlider(title='Книги автора')}"></div>-->
             <div class="Section">
                 <div class="Cards Cards_refresh">
                     <div class="Card" th:each="book : ${authorBooksPage}">
-                        <div class="Card-picture"><a href="#" th:href="${book.id}">
+                        <div class="Card-picture"><a href="#" th:href="@{'/books/' + ${book.slug}}">
                             <img th:src="${book.image}" alt="card.jpg"/></a>
                         </div>
                         <div class="Card-content">
-                            <strong class="Card-title"><a href="#"
+                            <strong class="Card-title"><a href="#" th:href="@{'/books/' + ${book.slug}}"
                                                           th:text="${book.title}">Техника</a>
                             </strong>
                             <div class="Card-description" th:text="${book.description}">Кондратенко Александр Петрович

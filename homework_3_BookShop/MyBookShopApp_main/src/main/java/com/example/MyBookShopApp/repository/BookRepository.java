@@ -68,4 +68,8 @@ public interface BookRepository extends JpaRepository<Book, Integer> {
             "WHERE g.id = :id OR g.parent_id = :id",
             nativeQuery = true)
     Integer getBooksCountByGenreId(@Param("id") Integer id);
+
+    Book findBookBySlug(String slug);
+
+    List<Book> findBooksBySlugIn(String[] slugs);
 }

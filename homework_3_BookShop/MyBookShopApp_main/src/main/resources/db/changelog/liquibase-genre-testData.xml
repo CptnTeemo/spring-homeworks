@@ -1,0 +1,67 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <changeSet author="Alexandr" id="data for genre">
+        <sql>
+            insert into genre (id, name, parent_id, slug) values (1, 'Лёгкое чтение', -1, 'genre-scf-109');
+            insert into genre (id, name, parent_id, slug) values (2, 'Фантастика', -1, 'genre-rhv-716');
+            insert into genre (id, name, parent_id, slug) values (3, 'Боевики', -1, 'genre-zvv-900');
+            insert into genre (id, name, parent_id, slug) values (4, 'Детективы', -1, 'genre-nyw-314');
+            insert into genre (id, name, parent_id, slug) values (5, 'Триллер', 4, 'genre-fkf-140');
+            insert into genre (id, name, parent_id, slug) values (6, 'Крутой детектив', 4, 'genre-ziu-772');
+            insert into genre (id, name, parent_id, slug) values (7, 'Иронический детектив', 4, 'genre-wgz-251');
+            insert into genre (id, name, parent_id, slug) values (8, 'Про маньяков', 4, 'genre-diz-165');
+            insert into genre (id, name, parent_id, slug) values (9, 'Шпионский детектив', 4, 'genre-yln-031');
+            insert into genre (id, name, parent_id, slug) values (10, 'Криминальный детектив', 4, 'genre-pue-433');
+            insert into genre (id, name, parent_id, slug) values (11, 'Классический детектив', 4, 'genre-tfu-493');
+            insert into genre (id, name, parent_id, slug) values (12, 'Политический детектив', 4, 'genre-hfl-763');
+            insert into genre (id, name, parent_id, slug) values (13, 'Фэнтези', -1, 'genre-gdx-826');
+            insert into genre (id, name, parent_id, slug) values (14, 'Романы', -1, 'genre-qvm-425');
+            insert into genre (id, name, parent_id, slug) values (15, 'Ужасы', -1, 'genre-unc-646');
+            insert into genre (id, name, parent_id, slug) values (16, 'Приключения', -1, 'genre-gcb-447');
+            insert into genre (id, name, parent_id, slug) values (17, 'Серьёзное чтение', -1, 'genre-pal-862');
+            insert into genre (id, name, parent_id, slug) values (18, 'Биографии', 17, 'genre-lcs-941');
+            insert into genre (id, name, parent_id, slug) values (19, 'Деловая литература', -1, 'genre-kqh-916');
+            insert into genre (id, name, parent_id, slug) values (20, 'Управление экономикой', 19, 'genre-eqk-975');
+            insert into genre (id, name, parent_id, slug) values (21, 'Карьера', 19, 'genre-arq-317');
+            insert into genre (id, name, parent_id, slug) values (22, 'Маркетинг, PR, реклама', 19, 'genre-uiw-685');
+            insert into genre (id, name, parent_id, slug) values (23, 'Финансы', 19, 'genre-vcd-906');
+            insert into genre (id, name, parent_id, slug) values (24, 'Бизнес-справочники', 19, 'genre-mxj-763');
+            insert into genre (id, name, parent_id, slug) values (25, 'Личные финансы', 19, 'genre-for-249');
+            insert into genre (id, name, parent_id, slug) values (26, 'Менеджмент', 19, 'genre-cyt-429');
+            insert into genre (id, name, parent_id, slug) values (27, 'Зарубежная деловая литература', 19, 'genre-xcf-249');
+            insert into genre (id, name, parent_id, slug) values (28, 'Личная эффективность', 19, 'genre-gsm-808');
+            insert into genre (id, name, parent_id, slug) values (29, 'Тайм-менеджмент', 19, 'genre-xsi-244');
+            insert into genre (id, name, parent_id, slug) values (30, 'Малый бизнес', 19, 'genre-zxx-240');
+            insert into genre (id, name, parent_id, slug) values (31, 'Продажи', 19, 'genre-zer-637');
+            insert into genre (id, name, parent_id, slug) values (32, 'Стартапы и создание бизнеса', 19, 'genre-lrs-242');
+            insert into genre (id, name, parent_id, slug) values (33, 'Корпоративная культура', 19, 'genre-thk-844');
+            insert into genre (id, name, parent_id, slug) values (34, 'Банковское дело', 19, 'genre-qpd-820');
+            insert into genre (id, name, parent_id, slug) values (35, 'Логистика', 19, 'genre-mdi-829');
+            insert into genre (id, name, parent_id, slug) values (36, 'Недвижимость', 19, 'genre-fwu-471');
+            insert into genre (id, name, parent_id, slug) values (37, 'Интернет-бизнес', 19, 'genre-fzp-661');
+            insert into genre (id, name, parent_id, slug) values (38, 'Ораторское искусство / риторика', 19, 'genre-fdp-670');
+            insert into genre (id, name, parent_id, slug) values (39, 'Привлечение клиентов и лояльность', 19, 'genre-zgb-214');
+            insert into genre (id, name, parent_id, slug) values (40, 'Делопроизводство', 19, 'genre-xgo-177');
+            insert into genre (id, name, parent_id, slug) values (41, 'Переговоры', 19, 'genre-jpr-974');
+            insert into genre (id, name, parent_id, slug) values (42, 'Государственное и муниципальное управление, политическое управление', 19, 'genre-srd-345');
+            insert into genre (id, name, parent_id, slug) values (43, 'О бизнесе популярно', 19, 'genre-nji-034');
+            insert into genre (id, name, parent_id, slug) values (44, 'Ценные бумаги / инвестиции', 19, 'genre-pso-608');
+            insert into genre (id, name, parent_id, slug) values (45, 'Бухучет / налогообложение / аудит', 19, 'genre-qmz-644');
+            insert into genre (id, name, parent_id, slug) values (46, 'Российская практика', 19, 'genre-qnr-696');
+            insert into genre (id, name, parent_id, slug) values (47, 'Истории успеха', 19, 'genre-vta-422');
+            insert into genre (id, name, parent_id, slug) values (48, 'Интернет-маркетинг', 19, 'genre-clt-807');
+            insert into genre (id, name, parent_id, slug) values (49, 'Лидерство', 19, 'genre-skt-906');
+            insert into genre (id, name, parent_id, slug) values (50, 'Проектный менеджмент', 19, 'genre-mte-984');
+            insert into genre (id, name, parent_id, slug) values (51, 'Управление качеством', 19, 'genre-tta-786');
+            insert into genre (id, name, parent_id, slug) values (52, 'Финансовый менеджмент', 19, 'genre-msm-786');
+            insert into genre (id, name, parent_id, slug) values (53, 'Управление персоналом', 19, 'genre-qod-043');
+            insert into genre (id, name, parent_id, slug) values (54, 'Бизнес-процессы', 19, 'genre-ruh-689');
+            insert into genre (id, name, parent_id, slug) values (55, 'Управление бизнесом', 19, 'genre-aul-006');
+            insert into genre (id, name, parent_id, slug) values (56, 'Драматургия', -1, 'genre-hpo-624');
+            insert into genre (id, name, parent_id, slug) values (57, 'Античная драма', 56, 'genre-whq-391');
+            insert into genre (id, name, parent_id, slug) values (58, 'Комедия', 56, 'genre-gft-618');
+            insert into genre (id, name, parent_id, slug) values (59, 'Сценарий', 56, 'genre-pyj-512');
+            insert into genre (id, name, parent_id, slug) values (60, 'Драма, пьеса', 56, 'genre-fis-022');
+        </sql>
+    </changeSet>
+</databaseChangeLog>

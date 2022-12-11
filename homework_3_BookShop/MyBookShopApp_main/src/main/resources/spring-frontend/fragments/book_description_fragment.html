@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <div class="ProductCard-desc" th:fragment="bookDesc">
-    <div class="ProductCard-header">
-        <h1 class="ProductCard-title">Мара и морок
+    <div class="ProductCard-header" th:object="${slugBook}">
+        <h1 class="ProductCard-title" th:text="${slugBook.title}">Мара и морок
         </h1>
-        <div class="ProductCard-author"><span class="ProductCard-titleProp">Автор:</span>&#32;<a
-                href="#">Лия Арден</a>
+        <div class="ProductCard-author"><span class="ProductCard-titleProp" >Автор:</span>&#32;<a
+                href="#" th:href="@{'/authors/' + ${slugBook.author.toString()}}"
+                th:text="${slugBook.author.toString()}">Лия Арден</a>
         </div>
         <div class="ProductCard-rating"><span class="ProductCard-titleProp">Рейтинг:</span>
             <button class="trigger trigger_dropdown" type="button">
                 <div class="Rating Rating_noStyleLink"><span class="Rating-stars"><span
-                        class="Rating-star Rating-star_view">
+                        th:class="${bookRating > 0.0} ? 'Rating-star Rating-star_view' : 'Rating-star'">
                           <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18">
                             <g>
                               <g>
@@ -18,7 +19,8 @@
                                       d="M9.5 14.925L3.629 18l1.121-6.512L0 6.875l6.564-.95L9.5 0l2.936 5.925 6.564.95-4.75 4.613L15.371 18z"></path>
                               </g>
                             </g>
-                          </svg></span><span class="Rating-star Rating-star_view">
+                          </svg></span><span class="Rating-star Rating-star_view"
+                                             th:class="${bookRating > 1.5} ? 'Rating-star Rating-star_view' : 'Rating-star'">
                           <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18">
                             <g>
                               <g>
@@ -26,7 +28,8 @@
                                       d="M9.5 14.925L3.629 18l1.121-6.512L0 6.875l6.564-.95L9.5 0l2.936 5.925 6.564.95-4.75 4.613L15.371 18z"></path>
                               </g>
                             </g>
-                          </svg></span><span class="Rating-star">
+                          </svg></span><span class="Rating-star Rating-star_view"
+                                             th:class="${bookRating > 2.5} ? 'Rating-star Rating-star_view' : 'Rating-star'">
                           <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18">
                             <g>
                               <g>
@@ -34,7 +37,8 @@
                                       d="M9.5 14.925L3.629 18l1.121-6.512L0 6.875l6.564-.95L9.5 0l2.936 5.925 6.564.95-4.75 4.613L15.371 18z"></path>
                               </g>
                             </g>
-                          </svg></span><span class="Rating-star">
+                          </svg></span><span class="Rating-star"
+                                             th:class="${bookRating > 3.5} ? 'Rating-star Rating-star_view' : 'Rating-star'">
                           <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18">
                             <g>
                               <g>
@@ -42,7 +46,8 @@
                                       d="M9.5 14.925L3.629 18l1.121-6.512L0 6.875l6.564-.95L9.5 0l2.936 5.925 6.564.95-4.75 4.613L15.371 18z"></path>
                               </g>
                             </g>
-                          </svg></span><span class="Rating-star">
+                          </svg></span><span class="Rating-star"
+                                             th:class="${bookRating > 4.5} ? 'Rating-star Rating-star_view' : 'Rating-star'">
                           <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18">
                             <g>
                               <g>
@@ -50,7 +55,7 @@
                                       d="M9.5 14.925L3.629 18l1.121-6.512L0 6.875l6.564-.95L9.5 0l2.936 5.925 6.564.95-4.75 4.613L15.371 18z"></path>
                               </g>
                             </g>
-                          </svg></span></span><span class="Rating-title">(567)</span>
+                          </svg></span></span><span class="Rating-title" th:text="${bookRating}">(567)</span>
                 </div>
                 <div class="modal modal_compression modal_dropdown">
                     <div class="modal-window"><a class="modal-close"
@@ -273,6 +278,7 @@
         </div>
         <div class="ProductCard-assessment"><span
                 class="ProductCard-titleProp">Оцените книгу:</span><span class="Rating Rating_input"
+                                                                         th:attr="data-bookid = ${slugBook.slug}"
                                                                          data-bookid="2121"><span
                 class="Rating-stars"><span class="Rating-star">
                         <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18">
@@ -325,11 +331,12 @@
                 href="/tags/">Современные</a>,&#32;<a href="/tags/">Психологическая проза</a>
         </div>
         <div class="ProductCard-cost"><span class="ProductCard-titleProp">Цена:</span><span
-                class="ProductCard-priceOld">₽300</span><span class="ProductCard-price">₽180</span>
+                class="ProductCard-priceOld" th:text="${'₽' + slugBook.priceOld}">₽300</span>
+            <span class="ProductCard-price" th:text="${'₽' + slugBook.discountPrice()}">₽180</span>
         </div>
     </div>
     <div class="ProductCard-text">
-        <p>Таких, как я, называют Марами - отмеченными самой богиней смерти Мораной. Когда-то у меня
+        <p th:text="${slugBook.description}">Таких, как я, называют Марами - отмеченными самой богиней смерти Мораной. Когда-то у меня
             и моих шести сестер был свой путь. Тогда люди нас уважали и просили о милосердии. Они
             приносили нам подношения и молились нам. Но 200 лет назад все изменилось, когда принц
             Серата осмелился поднять руку на одну из нас. Я пыталась отомстить, но погибли мы все.

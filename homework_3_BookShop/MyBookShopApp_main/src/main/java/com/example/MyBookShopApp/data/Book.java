@@ -1,16 +1,20 @@
 package com.example.MyBookShopApp.data;
 
+import com.example.MyBookShopApp.data.model.book.BookLikeEntity;
 import com.example.MyBookShopApp.data.model.book.TagEntity;
+import com.example.MyBookShopApp.data.model.book.file.BookFileEntity;
+import com.example.MyBookShopApp.data.model.book.review.BookReviewEntity;
 import com.example.MyBookShopApp.data.model.genre.GenreEntity;
+import com.fasterxml.jackson.annotation.JsonGetter;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Objects;
 
 @Entity
 @Table(name = "books")
@@ -62,6 +66,9 @@ public class Book implements Comparable<Book>{
     @Transient
     private Double popular;
 
+    @Transient
+    private Double bookRate;
+
     @ManyToOne
     @JoinColumn(name = "author_id", referencedColumnName = "id")
     @JsonIgnore
@@ -78,6 +85,29 @@ public class Book implements Comparable<Book>{
             inverseJoinColumns = @JoinColumn(name = "genre_id"))
     @JsonIgnore
     private List<GenreEntity> genreEntityList;
+
+    @JsonProperty
+    public Integer discountPrice() {
+        Integer discountedPriceInt = priceOld - Math.toIntExact(Math.round(price * priceOld));
+        return discountedPriceInt;
+    }
+
+    @OneToMany(mappedBy = "book")
+    @JsonIgnore
+    private List<BookFileEntity> bookFileEntityList = new ArrayList<>();
+
+    @OneToMany(mappedBy = "bookId")
+    @JsonIgnore
+    private List<BookLikeEntity> booksLikes;
+
+    @OneToMany(mappedBy = "bookReview")
+    @JsonIgnore
+    private List<BookReviewEntity> reviews;
+
+    @JsonGetter("authors")
+    public String authorsFullName() {
+        return author.toString();
+    }
 
     public Integer getId() {
         return id;
@@ -210,6 +240,38 @@ public class Book implements Comparable<Book>{
 
     public void setGenreEntityList(List<GenreEntity> genreEntityList) {
         this.genreEntityList = genreEntityList;
+    }
+
+    public List<BookFileEntity> getBookFileEntityList() {
+        return bookFileEntityList;
+    }
+
+    public void setBookFileEntityList(List<BookFileEntity> bookFileEntityList) {
+        this.bookFileEntityList = bookFileEntityList;
+    }
+
+    public List<BookLikeEntity> getBooksLikes() {
+        return booksLikes;
+    }
+
+    public void setBooksLikes(List<BookLikeEntity> booksLikes) {
+        this.booksLikes = booksLikes;
+    }
+
+    public List<BookReviewEntity> getReviews() {
+        return reviews;
+    }
+
+    public void setReviews(List<BookReviewEntity> reviews) {
+        this.reviews = reviews;
+    }
+
+    public Double getBookRate() {
+        return bookRate;
+    }
+
+    public void setBookRate(Double bookRate) {
+        this.bookRate = bookRate;
     }
 
     @Override

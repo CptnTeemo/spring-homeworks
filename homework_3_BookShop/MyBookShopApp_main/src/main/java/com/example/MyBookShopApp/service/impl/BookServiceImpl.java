@@ -1,7 +1,11 @@
 package com.example.MyBookShopApp.service.impl;
 
 import com.example.MyBookShopApp.data.Book;
+import com.example.MyBookShopApp.data.model.book.BookLikeEntity;
+import com.example.MyBookShopApp.data.model.book.review.BookReviewEntity;
+import com.example.MyBookShopApp.errs.BookstoreApiWrongParameterException;
 import com.example.MyBookShopApp.repository.BookRepository;
+import com.example.MyBookShopApp.service.BookReviewLikeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -15,11 +19,13 @@ import java.util.List;
 @Service
 public class BookServiceImpl implements com.example.MyBookShopApp.service.BookService {
 
-    private BookRepository bookRepository;
+    private final BookRepository bookRepository;
+    private final BookReviewLikeService bookReviewLikeService;
 
     @Autowired
-    public BookServiceImpl(BookRepository bookRepository) {
+    public BookServiceImpl(BookRepository bookRepository, BookReviewLikeService bookReviewLikeService) {
         this.bookRepository = bookRepository;
+        this.bookReviewLikeService = bookReviewLikeService;
     }
 
     public List<Book> getBooksData() {
@@ -32,8 +38,17 @@ public class BookServiceImpl implements com.example.MyBookShopApp.service.BookSe
         return bookRepository.findBooksByAuthorFirstNameContaining(authorName);
     }
 
-    public List<Book> getBooksByTitle(String title) {
-        return bookRepository.findBooksByTitleContaining(title);
+    public List<Book> getBooksByTitle(String title) throws BookstoreApiWrongParameterException {
+        if (title.equals("") || title.length() < 1) {
+            throw new BookstoreApiWrongParameterException("Wrong values passed to one or more parameters");
+        } else {
+            List<Book> data = bookRepository.findBooksByTitleContaining(title);
+            if (data.size() > 0) {
+                return data;
+            } else {
+                throw new BookstoreApiWrongParameterException("No data found with specified parameters...");
+            }
+        }
     }
 
     public List<Book> getBooksWithPriceBetween(Integer min, Integer max) {
@@ -71,6 +86,39 @@ public class BookServiceImpl implements com.example.MyBookShopApp.service.BookSe
                                                    Integer offset, Integer limit) {
         Pageable nextPage = PageRequest.of(offset, limit);
         return new ArrayList<>(bookRepository.getPageBooksByAuthor(lastName, firstName, nextPage).getContent());
+    }
+
+    @Override
+    public List<Book> getBooksBySlugIn(String[] cookiesSlug) {
+        return bookRepository.findBooksBySlugIn(cookiesSlug);
+    }
+
+    @Override
+    public Double getBookRating(String slug) {
+        Book book = bookRepository.findBookBySlug(slug);
+        List<BookLikeEntity> booksLikes = book.getBooksLikes();
+        if (booksLikes.size() < 1) {
+            return 0.0;
+        } else {
+            double sum = booksLikes.stream()
+                    .mapToDouble(BookLikeEntity::getRate).sum();
+            return sum / booksLikes.size();
+        }
+    }
+
+    @Override
+    public List<BookReviewEntity> getBookReviews(String slug) {
+        Book book = bookRepository.findBookBySlug(slug);
+        List<BookReviewEntity> reviews = book.getReviews();
+        if (reviews.size() < 1) {
+            return new ArrayList<>();
+        } else {
+            reviews.forEach(e -> {
+                e.setLikesCount(bookReviewLikeService.getLikesCount(e.getId()));
+                e.setDislikesCount(bookReviewLikeService.getDislikesCount(e.getId()));
+            });
+            return new ArrayList<>(reviews);
+        }
     }
 
     public List<Book> getBooksByAuthorFullName(String lastName, String firstName) {

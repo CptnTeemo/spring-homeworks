@@ -11,13 +11,13 @@ public class BookReviewLikeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Integer id;
 
-    @Column(columnDefinition = "INT NOT NULL")
-    private int reviewId;
+    @Column(name = "review_id",columnDefinition = "INT NOT NULL")
+    private Integer reviewId;
 
     @Column(name = "user_id", columnDefinition = "INT NOT NULL")
-    private int userId;
+    private Integer userId;
 
     @Column(columnDefinition = "TIMESTAMP NOT NULL")
     private LocalDateTime time;
@@ -29,27 +29,42 @@ public class BookReviewLikeEntity {
     @JoinColumn(name = "user_id", insertable = false, updatable = false)
     private UserEntity user;
 
-    public int getId() {
+    public BookReviewLikeEntity() {
+    }
+
+    public BookReviewLikeEntity(Integer reviewId, short value) {
+        this.reviewId = reviewId;
+        this.userId = randomUserId();
+        this.time = LocalDateTime.now();
+        this.value = value;
+    }
+
+    private Integer randomUserId() {
+        Integer result = (int) (Math.random() * 10);
+        return result == 0 ? 1 : result;
+    }
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public int getReviewId() {
+    public Integer getReviewId() {
         return reviewId;
     }
 
-    public void setReviewId(int reviewId) {
+    public void setReviewId(Integer reviewId) {
         this.reviewId = reviewId;
     }
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
@@ -76,4 +91,5 @@ public class BookReviewLikeEntity {
     public void setUser(UserEntity user) {
         this.user = user;
     }
+
 }
