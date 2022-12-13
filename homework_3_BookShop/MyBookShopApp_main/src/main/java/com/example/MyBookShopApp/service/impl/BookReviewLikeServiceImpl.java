@@ -1,5 +1,6 @@
 package com.example.MyBookShopApp.service.impl;
 
+import com.example.MyBookShopApp.data.model.book.review.BookReviewLikeEntity;
 import com.example.MyBookShopApp.repository.BookReviewLikeRepository;
 import com.example.MyBookShopApp.service.BookReviewLikeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,11 @@ public class BookReviewLikeServiceImpl implements BookReviewLikeService {
     @Override
     public Integer getDislikesCount(Integer id) {
         return bookReviewLikeRepository.getReviewDislikesByReviewId(id);
+    }
+
+    @Override
+    public void saveBookReviewLike(BookReviewLikeEntity bookReviewLike) {
+        bookReviewLikeRepository.save(bookReviewLike);
     }
 
 }

@@ -26,12 +26,10 @@ public class BookShopCartController {
     }
 
     private Logger logger = Logger.getLogger(String.valueOf(BookShopCartController.class));
-    private final BookRepository bookRepository;
     private final BookService bookService;
 
     @Autowired
-    public BookShopCartController(BookRepository bookRepository, BookService bookService) {
-        this.bookRepository = bookRepository;
+    public BookShopCartController(BookService bookService) {
         this.bookService = bookService;
     }
 
@@ -45,7 +43,7 @@ public class BookShopCartController {
             cartContents = cartContents.startsWith("/") ? cartContents.substring(1) : cartContents;
             cartContents = cartContents.endsWith("/") ? cartContents.substring(0, cartContents.length() - 1) :cartContents;
             String[] cookieSlug = cartContents.split("/");
-            List<Book> booksFromCookieSlugs = bookRepository.findBooksBySlugIn(cookieSlug);
+            List<Book> booksFromCookieSlugs = bookService.getBooksBySlugIn(cookieSlug);
             booksFromCookieSlugs.forEach(e -> e.setBookRate(bookService.getBookRating(e.getSlug())));
             int discountSum = booksFromCookieSlugs.stream().mapToInt(Book::discountPrice).sum();
             int oldSum = booksFromCookieSlugs.stream().mapToInt(Book::getPriceOld).sum();

@@ -121,6 +121,16 @@ public class BookServiceImpl implements com.example.MyBookShopApp.service.BookSe
         }
     }
 
+    @Override
+    public Book getBookBySlug(String slug) {
+        return bookRepository.findBookBySlug(slug);
+    }
+
+    @Override
+    public void saveUpdatedBook(Book bookToUpdate) {
+        bookRepository.save(bookToUpdate);
+    }
+
     public List<Book> getBooksByAuthorFullName(String lastName, String firstName) {
         return bookRepository.getAllBooksByAuthor(lastName, firstName);
     }

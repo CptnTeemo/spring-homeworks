@@ -1,6 +1,7 @@
 package com.example.MyBookShopApp.service;
 
 import com.example.MyBookShopApp.data.Book;
+import com.example.MyBookShopApp.data.model.book.BookLikeEntity;
 import com.example.MyBookShopApp.data.model.book.review.BookReviewEntity;
 import com.example.MyBookShopApp.errs.BookstoreApiWrongParameterException;
 import org.springframework.data.domain.Page;
@@ -39,4 +40,9 @@ public interface BookService {
     Double getBookRating(String slug);
 
     List<BookReviewEntity> getBookReviews(String slug);
+
+    Book getBookBySlug(String slug);
+
+    void saveUpdatedBook(Book bookToUpdate);
+
 }

@@ -5,10 +5,9 @@ import com.example.MyBookShopApp.data.ResourceStorage;
 import com.example.MyBookShopApp.data.model.book.BookLikeEntity;
 import com.example.MyBookShopApp.data.model.book.review.BookReviewEntity;
 import com.example.MyBookShopApp.data.model.book.review.BookReviewLikeEntity;
-import com.example.MyBookShopApp.repository.BookLikeRepository;
-import com.example.MyBookShopApp.repository.BookRepository;
-import com.example.MyBookShopApp.repository.BookReviewLikeRepository;
-import com.example.MyBookShopApp.repository.BookReviewRepository;
+import com.example.MyBookShopApp.service.BookLikeService;
+import com.example.MyBookShopApp.service.BookReviewLikeService;
+import com.example.MyBookShopApp.service.BookReviewService;
 import com.example.MyBookShopApp.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
@@ -29,31 +28,28 @@ import java.util.logging.Logger;
 @RequestMapping("/books")
 public class BooksController {
 
-    private final BookRepository bookRepository;
     private final ResourceStorage storage;
-    private final BookLikeRepository bookLikeRepository;
+    private final BookLikeService bookLikeService;
     private final BookService bookService;
-    private final BookReviewRepository bookReviewRepository;
-    private final BookReviewLikeRepository bookReviewLikeRepository;
+    private final BookReviewService bookReviewService;
+    private final BookReviewLikeService bookReviewLikeService;
 
     @Autowired
-    public BooksController(BookRepository bookRepository,
-                           ResourceStorage storage,
-                           BookLikeRepository bookLikeRepository,
+    public BooksController(ResourceStorage storage,
+                           BookLikeService bookLikeService,
                            BookService bookService,
-                           BookReviewRepository bookReviewRepository,
-                           BookReviewLikeRepository bookReviewLikeRepository) {
-        this.bookRepository = bookRepository;
+                           BookReviewService bookReviewService,
+                           BookReviewLikeService bookReviewLikeService) {
         this.storage = storage;
-        this.bookLikeRepository = bookLikeRepository;
+        this.bookLikeService = bookLikeService;
         this.bookService = bookService;
-        this.bookReviewRepository = bookReviewRepository;
-        this.bookReviewLikeRepository = bookReviewLikeRepository;
+        this.bookReviewService = bookReviewService;
+        this.bookReviewLikeService = bookReviewLikeService;
     }
 
     @GetMapping("/{slug}")
     public String bookPage(@PathVariable("slug") String slug, Model model) {
-        Book book = bookRepository.findBookBySlug(slug);
+        Book book = bookService.getBookBySlug(slug);
         model.addAttribute("slugBook", book);
         model.addAttribute("bookRating", bookService.getBookRating(slug));
         model.addAttribute("bookReviews", bookService.getBookReviews(slug));
@@ -63,9 +59,9 @@ public class BooksController {
     @PostMapping("/{slug}/img/save")
     public String saveNewBookImage(@RequestParam("file") MultipartFile file, @PathVariable("slug") String slug) throws IOException {
         String savePath = storage.saveNewBookImage(file, slug);
-        Book bookToUpdate = bookRepository.findBookBySlug(slug);
+        Book bookToUpdate = bookService.getBookBySlug(slug);
         bookToUpdate.setImage(savePath);
-        bookRepository.save(bookToUpdate); //save new path in db here
+        bookService.saveUpdatedBook(bookToUpdate); //save new path in db here
         return ("redirect:/books/" + slug);
     }
 
@@ -96,18 +92,18 @@ public class BooksController {
     @PostMapping("/rateBook")
     public ResponseEntity<Object> rateBook(@RequestParam("bookId") String slug,
                                            @RequestParam("value") Integer rate) {
-        Book book = bookRepository.findBookBySlug(slug);
+        Book book = bookService.getBookBySlug(slug);
         BookLikeEntity bookLike = new BookLikeEntity(book.getId(), rate);
-        bookLikeRepository.save(bookLike);
+        bookLikeService.saveBookLike(bookLike);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
     @PostMapping("/bookReview")
     public ResponseEntity<Object> bookReview(@RequestParam("bookId") String slug,
                                              @RequestParam("text") String text) {
-        Book book = bookRepository.findBookBySlug(slug);
+        Book book = bookService.getBookBySlug(slug);
         BookReviewEntity bookReview = new BookReviewEntity(book.getId(), text);
-        bookReviewRepository.save(bookReview);
+        bookReviewService.saveBookReview(bookReview);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
@@ -115,7 +111,7 @@ public class BooksController {
     public ResponseEntity<Object> bookReviewLike(@RequestParam("value") Short value,
                                                  @RequestParam("reviewid") Integer reviewId) {
         BookReviewLikeEntity bookReviewLike = new BookReviewLikeEntity(reviewId, value);
-        bookReviewLikeRepository.save(bookReviewLike);
+        bookReviewLikeService.saveBookReviewLike(bookReviewLike);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
