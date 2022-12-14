@@ -7,13 +7,14 @@
    http://www.liquibase.org/xml/ns/dbchangelog
    http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
-    <include file="db/changelog/liquibase-outputChangeLog_init_2.xml"/>
+    <include file="db/changelog/liquibase-outputChangeLog_init.xml"/>
     <include file="db/changelog/liquibase-authors-testData.xml"/>
     <include file="db/changelog/liquibase-tags-testData.xml"/>
     <include file="db/changelog/liquibase-books-testData.xml"/>
     <include file="db/changelog/liquibase-genre-testData.xml"/>
     <include file="db/changelog/liquibase-book2genre-testData.xml"/>
     <include file="db/changelog/liquibase-book_file-testData.xml"/>
+    <include file="db/changelog/liquibase-user-testData.xml"/>
 
 
 </databaseChangeLog>

@@ -1,6 +1,7 @@
 package com.example.MyBookShopApp.data.model.book.review;
 
 import com.example.MyBookShopApp.data.model.user.UserEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -32,6 +33,7 @@ public class MessageEntity {
     private String text;
 
     @OneToOne(mappedBy = "message")
+    @JsonIgnore
     private UserEntity user;
 
     public int getId() {

@@ -1,6 +1,7 @@
 package com.example.MyBookShopApp.data.model.book;
 
 import com.example.MyBookShopApp.data.Book;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class AuthorEntity {
     @JoinTable(name = "book2author",
             joinColumns = @JoinColumn(name = "author_id"),
             inverseJoinColumns = @JoinColumn(name = "book_id"))
+    @JsonIgnore
     List<BookEntity> bookEntityList;
 
     public Integer getId() {

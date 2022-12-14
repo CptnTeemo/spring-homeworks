@@ -2,6 +2,7 @@ package com.example.MyBookShopApp.data.model.user;
 
 
 import com.example.MyBookShopApp.data.model.enums.ContactType;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -35,6 +36,7 @@ public class UserContactEntity {
     private String contact;
 
     @OneToOne(mappedBy = "userContact")
+    @JsonIgnore
     private UserEntity user;
 
     public int getId() {

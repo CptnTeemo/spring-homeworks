@@ -1,6 +1,7 @@
 package com.example.MyBookShopApp.data.model.book.file;
 
 import com.example.MyBookShopApp.data.Book;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 
@@ -20,6 +21,7 @@ public class BookFileEntity {
 
     @ManyToOne
     @JoinColumn(name = "book_id", referencedColumnName = "id")
+    @JsonIgnore
     private Book book;
 
     public String getBookFileExtensionString() {

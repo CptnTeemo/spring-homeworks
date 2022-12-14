@@ -2,6 +2,7 @@ package com.example.MyBookShopApp.data.model.book;
 
 import com.example.MyBookShopApp.data.model.genre.GenreEntity;
 import com.example.MyBookShopApp.data.model.user.UserEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -33,6 +34,7 @@ public class BookEntity {
     private Integer discount;
 
     @ManyToMany(mappedBy = "bookEntityList")
+    @JsonIgnore
     private List<AuthorEntity> authorEntityList;
 
 //    @ManyToMany

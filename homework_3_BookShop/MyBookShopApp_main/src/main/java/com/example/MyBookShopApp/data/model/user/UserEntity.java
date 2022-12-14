@@ -3,6 +3,7 @@ package com.example.MyBookShopApp.data.model.user;
 import com.example.MyBookShopApp.data.model.book.BookEntity;
 import com.example.MyBookShopApp.data.model.book.review.BookReviewLikeEntity;
 import com.example.MyBookShopApp.data.model.book.review.MessageEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -29,26 +30,33 @@ public class UserEntity {
     private String name;
 
     @ManyToMany(mappedBy = "userEntityList")
+    @JsonIgnore
     private List<BookEntity> bookEntityList;
 
     @ManyToMany(mappedBy = "userEntityListByFile")
+    @JsonIgnore
     private List<BookEntity> bookEntityListByFile;
 
     @ManyToMany(mappedBy = "userEntityListByBalanceTransaction")
+    @JsonIgnore
     private List<BookEntity> bookEntityListByBalanceTransaction;
 
     @OneToOne
     @JoinColumn(name = "user_id", insertable = false, updatable = false)
+    @JsonIgnore
     private UserContactEntity userContact;
 
     @OneToOne
     @JoinColumn(name = "user_id", insertable = false, updatable = false)
+    @JsonIgnore
     private MessageEntity message;
 
     @ManyToMany(mappedBy = "userListReview")
+    @JsonIgnore
     private List<BookEntity> booksListReview;
 
     @OneToMany(mappedBy = "user")
+    @JsonIgnore
     private List<BookReviewLikeEntity> bookReviewLikeEntityList;
 
     public int getId() {

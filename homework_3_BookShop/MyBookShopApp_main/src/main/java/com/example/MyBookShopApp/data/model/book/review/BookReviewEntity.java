@@ -1,6 +1,7 @@
 package com.example.MyBookShopApp.data.model.book.review;
 
 import com.example.MyBookShopApp.data.Book;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -33,6 +34,7 @@ public class BookReviewEntity {
 
     @ManyToOne
     @JoinColumn(name = "book_id", referencedColumnName = "id", insertable = false, updatable = false)
+    @JsonIgnore
     private Book bookReview;
 
     public BookReviewEntity(Integer bookId, String text) {

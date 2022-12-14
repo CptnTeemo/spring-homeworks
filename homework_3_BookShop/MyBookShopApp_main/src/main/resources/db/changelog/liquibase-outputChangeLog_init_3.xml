@@ -1,213 +1,333 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
-    <changeSet author="Teemo (generated)" id="1671042483375-1">
+    <changeSet author="Teemo (generated)" id="1669213131886-1">
         <createSequence sequenceName="author_id_seq"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-2">
+    <changeSet author="Teemo (generated)" id="1669213131886-2">
         <createSequence sequenceName="author_id_seq1"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-3">
+    <changeSet author="Teemo (generated)" id="1669213131886-3">
         <createSequence sequenceName="author_id_seq2"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-4">
+    <changeSet author="Teemo (generated)" id="1669213131886-4">
+        <createSequence sequenceName="author_id_seq3"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-5">
+        <createSequence sequenceName="author_id_seq4"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-6">
         <createSequence sequenceName="authors_id_seq"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-5">
+    <changeSet author="Teemo (generated)" id="1669213131886-7">
         <createSequence sequenceName="authors_id_seq1"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-6">
+    <changeSet author="Teemo (generated)" id="1669213131886-8">
         <createSequence sequenceName="authors_id_seq2"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-7">
+    <changeSet author="Teemo (generated)" id="1669213131886-9">
         <createSequence sequenceName="authors_id_seq3"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-8">
+    <changeSet author="Teemo (generated)" id="1669213131886-10">
+        <createSequence sequenceName="authors_id_seq4"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-11">
+        <createSequence sequenceName="authors_id_seq5"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-12">
         <createSequence sequenceName="balance_transaction_id_seq"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-9">
+    <changeSet author="Teemo (generated)" id="1669213131886-13">
         <createSequence sequenceName="balance_transaction_id_seq1"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-10">
+    <changeSet author="Teemo (generated)" id="1669213131886-14">
         <createSequence sequenceName="balance_transaction_id_seq2"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-11">
+    <changeSet author="Teemo (generated)" id="1669213131886-15">
+        <createSequence sequenceName="balance_transaction_id_seq3"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-16">
+        <createSequence sequenceName="balance_transaction_id_seq4"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-17">
         <createSequence sequenceName="book2author_id_seq"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-12">
+    <changeSet author="Teemo (generated)" id="1669213131886-18">
         <createSequence sequenceName="book2author_id_seq1"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-13">
+    <changeSet author="Teemo (generated)" id="1669213131886-19">
         <createSequence sequenceName="book2author_id_seq2"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-14">
+    <changeSet author="Teemo (generated)" id="1669213131886-20">
+        <createSequence sequenceName="book2author_id_seq3"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-21">
+        <createSequence sequenceName="book2author_id_seq4"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-22">
         <createSequence sequenceName="book2genre_id_seq"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-15">
+    <changeSet author="Teemo (generated)" id="1669213131886-23">
         <createSequence sequenceName="book2genre_id_seq1"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-16">
+    <changeSet author="Teemo (generated)" id="1669213131886-24">
         <createSequence sequenceName="book2genre_id_seq2"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-17">
+    <changeSet author="Teemo (generated)" id="1669213131886-25">
+        <createSequence sequenceName="book2genre_id_seq3"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-26">
+        <createSequence sequenceName="book2genre_id_seq4"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-27">
         <createSequence sequenceName="book2user_id_seq"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-18">
+    <changeSet author="Teemo (generated)" id="1669213131886-28">
         <createSequence sequenceName="book2user_id_seq1"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-19">
+    <changeSet author="Teemo (generated)" id="1669213131886-29">
         <createSequence sequenceName="book2user_id_seq2"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-20">
+    <changeSet author="Teemo (generated)" id="1669213131886-30">
+        <createSequence sequenceName="book2user_id_seq3"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-31">
+        <createSequence sequenceName="book2user_id_seq4"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-32">
         <createSequence sequenceName="book2user_type_id_seq"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-21">
+    <changeSet author="Teemo (generated)" id="1669213131886-33">
         <createSequence sequenceName="book2user_type_id_seq1"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-22">
+    <changeSet author="Teemo (generated)" id="1669213131886-34">
         <createSequence sequenceName="book2user_type_id_seq2"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-23">
+    <changeSet author="Teemo (generated)" id="1669213131886-35">
+        <createSequence sequenceName="book2user_type_id_seq3"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-36">
+        <createSequence sequenceName="book2user_type_id_seq4"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-37">
         <createSequence sequenceName="book_file_id_seq"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-24">
+    <changeSet author="Teemo (generated)" id="1669213131886-38">
         <createSequence sequenceName="book_file_id_seq1"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-25">
+    <changeSet author="Teemo (generated)" id="1669213131886-39">
         <createSequence sequenceName="book_file_id_seq2"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-26">
+    <changeSet author="Teemo (generated)" id="1669213131886-40">
+        <createSequence sequenceName="book_file_id_seq3"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-41">
+        <createSequence sequenceName="book_file_id_seq4"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-42">
         <createSequence sequenceName="book_file_type_id_seq"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-27">
+    <changeSet author="Teemo (generated)" id="1669213131886-43">
         <createSequence sequenceName="book_file_type_id_seq1"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-28">
+    <changeSet author="Teemo (generated)" id="1669213131886-44">
         <createSequence sequenceName="book_file_type_id_seq2"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-29">
+    <changeSet author="Teemo (generated)" id="1669213131886-45">
+        <createSequence sequenceName="book_file_type_id_seq3"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-46">
+        <createSequence sequenceName="book_file_type_id_seq4"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-47">
         <createSequence sequenceName="book_id_seq"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-30">
+    <changeSet author="Teemo (generated)" id="1669213131886-48">
         <createSequence sequenceName="book_id_seq1"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-31">
+    <changeSet author="Teemo (generated)" id="1669213131886-49">
         <createSequence sequenceName="book_id_seq2"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-32">
+    <changeSet author="Teemo (generated)" id="1669213131886-50">
+        <createSequence sequenceName="book_id_seq3"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-51">
+        <createSequence sequenceName="book_id_seq4"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-52">
         <createSequence sequenceName="book_review_id_seq"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-33">
+    <changeSet author="Teemo (generated)" id="1669213131886-53">
         <createSequence sequenceName="book_review_id_seq1"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-34">
+    <changeSet author="Teemo (generated)" id="1669213131886-54">
         <createSequence sequenceName="book_review_id_seq2"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-35">
+    <changeSet author="Teemo (generated)" id="1669213131886-55">
+        <createSequence sequenceName="book_review_id_seq3"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-56">
+        <createSequence sequenceName="book_review_id_seq4"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-57">
         <createSequence sequenceName="book_review_like_id_seq"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-36">
+    <changeSet author="Teemo (generated)" id="1669213131886-58">
         <createSequence sequenceName="book_review_like_id_seq1"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-37">
+    <changeSet author="Teemo (generated)" id="1669213131886-59">
         <createSequence sequenceName="book_review_like_id_seq2"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-38">
+    <changeSet author="Teemo (generated)" id="1669213131886-60">
+        <createSequence sequenceName="book_review_like_id_seq3"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-61">
+        <createSequence sequenceName="book_review_like_id_seq4"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-62">
         <createSequence sequenceName="books_id_seq"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-39">
+    <changeSet author="Teemo (generated)" id="1669213131886-63">
         <createSequence sequenceName="books_id_seq1"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-40">
+    <changeSet author="Teemo (generated)" id="1669213131886-64">
         <createSequence sequenceName="books_id_seq2"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-41">
+    <changeSet author="Teemo (generated)" id="1669213131886-65">
         <createSequence sequenceName="books_id_seq3"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-42">
-        <createSequence sequenceName="books_likes_id_seq"/>
+    <changeSet author="Teemo (generated)" id="1669213131886-66">
+        <createSequence sequenceName="books_id_seq4"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-43">
+    <changeSet author="Teemo (generated)" id="1669213131886-67">
+        <createSequence sequenceName="books_id_seq5"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-68">
         <createSequence sequenceName="document_id_seq"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-44">
+    <changeSet author="Teemo (generated)" id="1669213131886-69">
         <createSequence sequenceName="document_id_seq1"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-45">
+    <changeSet author="Teemo (generated)" id="1669213131886-70">
         <createSequence sequenceName="document_id_seq2"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-46">
+    <changeSet author="Teemo (generated)" id="1669213131886-71">
+        <createSequence sequenceName="document_id_seq3"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-72">
+        <createSequence sequenceName="document_id_seq4"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-73">
         <createSequence sequenceName="faq_id_seq"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-47">
+    <changeSet author="Teemo (generated)" id="1669213131886-74">
         <createSequence sequenceName="faq_id_seq1"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-48">
+    <changeSet author="Teemo (generated)" id="1669213131886-75">
         <createSequence sequenceName="faq_id_seq2"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-49">
+    <changeSet author="Teemo (generated)" id="1669213131886-76">
+        <createSequence sequenceName="faq_id_seq3"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-77">
+        <createSequence sequenceName="faq_id_seq4"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-78">
         <createSequence sequenceName="file_download_id_seq"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-50">
+    <changeSet author="Teemo (generated)" id="1669213131886-79">
         <createSequence sequenceName="file_download_id_seq1"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-51">
+    <changeSet author="Teemo (generated)" id="1669213131886-80">
         <createSequence sequenceName="file_download_id_seq2"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-52">
+    <changeSet author="Teemo (generated)" id="1669213131886-81">
+        <createSequence sequenceName="file_download_id_seq3"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-82">
+        <createSequence sequenceName="file_download_id_seq4"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-83">
         <createSequence sequenceName="genre_id_seq"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-53">
+    <changeSet author="Teemo (generated)" id="1669213131886-84">
         <createSequence sequenceName="genre_id_seq1"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-54">
+    <changeSet author="Teemo (generated)" id="1669213131886-85">
         <createSequence sequenceName="genre_id_seq2"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-55">
-        <createSequence sequenceName="hibernate_sequence"/>
+    <changeSet author="Teemo (generated)" id="1669213131886-86">
+        <createSequence sequenceName="genre_id_seq3"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-56">
+    <changeSet author="Teemo (generated)" id="1669213131886-87">
+        <createSequence sequenceName="genre_id_seq4"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-88">
         <createSequence sequenceName="message_id_seq"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-57">
+    <changeSet author="Teemo (generated)" id="1669213131886-89">
         <createSequence sequenceName="message_id_seq1"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-58">
+    <changeSet author="Teemo (generated)" id="1669213131886-90">
         <createSequence sequenceName="message_id_seq2"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-59">
+    <changeSet author="Teemo (generated)" id="1669213131886-91">
+        <createSequence sequenceName="message_id_seq3"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-92">
+        <createSequence sequenceName="message_id_seq4"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-93">
         <createSequence sequenceName="tags_id_seq"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-60">
+    <changeSet author="Teemo (generated)" id="1669213131886-94">
         <createSequence sequenceName="test_entities_id_seq"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-61">
+    <changeSet author="Teemo (generated)" id="1669213131886-95">
         <createSequence sequenceName="test_entities_id_seq1"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-62">
+    <changeSet author="Teemo (generated)" id="1669213131886-96">
         <createSequence sequenceName="test_entities_id_seq2"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-63">
+    <changeSet author="Teemo (generated)" id="1669213131886-97">
         <createSequence sequenceName="test_entities_id_seq3"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-64">
+    <changeSet author="Teemo (generated)" id="1669213131886-98">
+        <createSequence sequenceName="test_entities_id_seq4"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-99">
+        <createSequence sequenceName="test_entities_id_seq5"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-100">
         <createSequence sequenceName="user_contact_id_seq"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-65">
+    <changeSet author="Teemo (generated)" id="1669213131886-101">
         <createSequence sequenceName="user_contact_id_seq1"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-66">
+    <changeSet author="Teemo (generated)" id="1669213131886-102">
         <createSequence sequenceName="user_contact_id_seq2"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-67">
+    <changeSet author="Teemo (generated)" id="1669213131886-103">
+        <createSequence sequenceName="user_contact_id_seq3"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-104">
+        <createSequence sequenceName="user_contact_id_seq4"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-105">
         <createSequence sequenceName="users_id_seq"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-68">
+    <changeSet author="Teemo (generated)" id="1669213131886-106">
         <createSequence sequenceName="users_id_seq1"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-69">
+    <changeSet author="Teemo (generated)" id="1669213131886-107">
         <createSequence sequenceName="users_id_seq2"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-70">
+    <changeSet author="Teemo (generated)" id="1669213131886-108">
+        <createSequence sequenceName="users_id_seq3"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-109">
+        <createSequence sequenceName="users_id_seq4"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-110">
         <createTable tableName="author">
             <column autoIncrement="true" name="id" type="SERIAL">
                 <constraints primaryKey="true" primaryKeyName="author_pkey"/>
@@ -222,17 +342,16 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-71">
+    <changeSet author="Teemo (generated)" id="1669213131886-111">
         <createTable tableName="authors">
             <column autoIncrement="true" name="id" type="SERIAL">
                 <constraints primaryKey="true" primaryKeyName="authors_pkey"/>
             </column>
-            <column name="description" type="TEXT"/>
             <column name="first_name" type="VARCHAR(255)"/>
             <column name="last_name" type="VARCHAR(255)"/>
         </createTable>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-72">
+    <changeSet author="Teemo (generated)" id="1669213131886-112">
         <createTable tableName="balance_transaction">
             <column autoIncrement="true" name="id" type="SERIAL">
                 <constraints primaryKey="true" primaryKeyName="balance_transaction_pkey"/>
@@ -254,7 +373,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-73">
+    <changeSet author="Teemo (generated)" id="1669213131886-113">
         <createTable tableName="book">
             <column autoIncrement="true" name="id" type="SERIAL">
                 <constraints primaryKey="true" primaryKeyName="book_pkey"/>
@@ -281,7 +400,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-74">
+    <changeSet author="Teemo (generated)" id="1669213131886-114">
         <createTable tableName="book2author">
             <column autoIncrement="true" name="id" type="SERIAL">
                 <constraints primaryKey="true" primaryKeyName="book2author_pkey"/>
@@ -297,7 +416,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-75">
+    <changeSet author="Teemo (generated)" id="1669213131886-115">
         <createTable tableName="book2genre">
             <column autoIncrement="true" name="id" type="SERIAL">
                 <constraints primaryKey="true" primaryKeyName="book2genre_pkey"/>
@@ -310,7 +429,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-76">
+    <changeSet author="Teemo (generated)" id="1669213131886-116">
         <createTable tableName="book2user">
             <column autoIncrement="true" name="id" type="SERIAL">
                 <constraints primaryKey="true" primaryKeyName="book2user_pkey"/>
@@ -329,7 +448,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-77">
+    <changeSet author="Teemo (generated)" id="1669213131886-117">
         <createTable tableName="book2user_type">
             <column autoIncrement="true" name="id" type="SERIAL">
                 <constraints primaryKey="true" primaryKeyName="book2user_type_pkey"/>
@@ -342,18 +461,23 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-78">
+    <changeSet author="Teemo (generated)" id="1669213131886-118">
         <createTable tableName="book_file">
             <column autoIncrement="true" name="id" type="SERIAL">
                 <constraints primaryKey="true" primaryKeyName="book_file_pkey"/>
             </column>
-            <column name="book_id" type="INT"/>
-            <column name="hash" type="VARCHAR(255)"/>
-            <column name="path" type="VARCHAR(255)"/>
-            <column name="type_id" type="INT"/>
+            <column name="hash" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="path" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="type_id" type="INT">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-79">
+    <changeSet author="Teemo (generated)" id="1669213131886-119">
         <createTable tableName="book_file_type">
             <column autoIncrement="true" name="id" type="SERIAL">
                 <constraints primaryKey="true" primaryKeyName="book_file_type_pkey"/>
@@ -364,7 +488,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-80">
+    <changeSet author="Teemo (generated)" id="1669213131886-120">
         <createTable tableName="book_review">
             <column autoIncrement="true" name="id" type="SERIAL">
                 <constraints primaryKey="true" primaryKeyName="book_review_pkey"/>
@@ -383,7 +507,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-81">
+    <changeSet author="Teemo (generated)" id="1669213131886-121">
         <createTable tableName="book_review_like">
             <column autoIncrement="true" name="id" type="SERIAL">
                 <constraints primaryKey="true" primaryKeyName="book_review_like_pkey"/>
@@ -402,7 +526,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-82">
+    <changeSet author="Teemo (generated)" id="1669213131886-122">
         <createTable tableName="books">
             <column autoIncrement="true" name="id" type="SERIAL">
                 <constraints primaryKey="true" primaryKeyName="books_pkey"/>
@@ -430,16 +554,7 @@
             <column name="tag_id" type="INT"/>
         </createTable>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-83">
-        <createTable tableName="books_likes">
-            <column autoIncrement="true" name="id" type="SERIAL">
-                <constraints primaryKey="true" primaryKeyName="books_likes_pkey"/>
-            </column>
-            <column name="book_id" type="INT"/>
-            <column name="rate" type="INT"/>
-        </createTable>
-    </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-84">
+    <changeSet author="Teemo (generated)" id="1669213131886-123">
         <createTable tableName="document">
             <column autoIncrement="true" name="id" type="SERIAL">
                 <constraints primaryKey="true" primaryKeyName="document_pkey"/>
@@ -458,7 +573,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-85">
+    <changeSet author="Teemo (generated)" id="1669213131886-124">
         <createTable tableName="faq">
             <column autoIncrement="true" name="id" type="SERIAL">
                 <constraints primaryKey="true" primaryKeyName="faq_pkey"/>
@@ -474,7 +589,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-86">
+    <changeSet author="Teemo (generated)" id="1669213131886-125">
         <createTable tableName="file_download">
             <column autoIncrement="true" name="id" type="SERIAL">
                 <constraints primaryKey="true" primaryKeyName="file_download_pkey"/>
@@ -490,7 +605,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-87">
+    <changeSet author="Teemo (generated)" id="1669213131886-126">
         <createTable tableName="genre">
             <column autoIncrement="true" name="id" type="SERIAL">
                 <constraints primaryKey="true" primaryKeyName="genre_pkey"/>
@@ -504,7 +619,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-88">
+    <changeSet author="Teemo (generated)" id="1669213131886-127">
         <createTable tableName="message">
             <column autoIncrement="true" name="id" type="SERIAL">
                 <constraints primaryKey="true" primaryKeyName="message_pkey"/>
@@ -523,7 +638,7 @@
             <column name="user_id" type="INT"/>
         </createTable>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-89">
+    <changeSet author="Teemo (generated)" id="1669213131886-128">
         <createTable tableName="tags">
             <column autoIncrement="true" name="id" type="SERIAL">
                 <constraints primaryKey="true" primaryKeyName="tags_pkey"/>
@@ -531,7 +646,7 @@
             <column name="tag" type="VARCHAR(255)"/>
         </createTable>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-90">
+    <changeSet author="Teemo (generated)" id="1669213131886-129">
         <createTable tableName="test_entities">
             <column autoIncrement="true" name="id" type="BIGSERIAL">
                 <constraints primaryKey="true" primaryKeyName="test_entities_pkey"/>
@@ -539,7 +654,7 @@
             <column name="data" type="VARCHAR(255)"/>
         </createTable>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-91">
+    <changeSet author="Teemo (generated)" id="1669213131886-130">
         <createTable tableName="user_contact">
             <column autoIncrement="true" name="id" type="SERIAL">
                 <constraints primaryKey="true" primaryKeyName="user_contact_pkey"/>
@@ -561,7 +676,7 @@
             </column>
         </createTable>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-92">
+    <changeSet author="Teemo (generated)" id="1669213131886-131">
         <createTable tableName="users">
             <column autoIncrement="true" name="id" type="SERIAL">
                 <constraints primaryKey="true" primaryKeyName="users_pkey"/>
@@ -581,58 +696,46 @@
             <column name="user_id" type="INT"/>
         </createTable>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-93">
+    <changeSet author="Teemo (generated)" id="1669213131886-132">
         <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="book2user" constraintName="fk1i8i82uo8kbv1wepiujenmj7x" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="users"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-94">
+    <changeSet author="Teemo (generated)" id="1669213131886-133">
+        <addForeignKeyConstraint baseColumnNames="book_id" baseTableName="book_review" constraintName="fk29oatdl4f30mtg65oxo1nkmjg" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="book"/>
+    </changeSet>
+    <changeSet author="Teemo (generated)" id="1669213131886-134">
         <addForeignKeyConstraint baseColumnNames="book_id" baseTableName="book2user" constraintName="fk7cv34daf9pi5ie147slv010b3" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="book"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-95">
+    <changeSet author="Teemo (generated)" id="1669213131886-135">
         <addForeignKeyConstraint baseColumnNames="book_id" baseTableName="book2author" constraintName="fkafij5snytuqywyya5gj5r30l3" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="book"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-96">
+    <changeSet author="Teemo (generated)" id="1669213131886-136">
         <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="book_review_like" constraintName="fkbh4qufg71ntnx2v11gy8ldc5f" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="users"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-97">
+    <changeSet author="Teemo (generated)" id="1669213131886-137">
         <addForeignKeyConstraint baseColumnNames="author_id" baseTableName="book2author" constraintName="fkcdamvjmc66dxs94gpco2g5yyb" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="author"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-98">
-        <addForeignKeyConstraint baseColumnNames="book_id" baseTableName="book2genre" constraintName="fkceqa97sssb6d5xg7n8jtt5gqb" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="books"/>
-    </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-99">
+    <changeSet author="Teemo (generated)" id="1669213131886-138">
         <addForeignKeyConstraint baseColumnNames="book_id" baseTableName="file_download" constraintName="fkckyk51qg1y0buyh6pe7uwcw8w" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="book"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-100">
+    <changeSet author="Teemo (generated)" id="1669213131886-139">
         <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="file_download" constraintName="fkelm7ats7ftrgyvfn8a1xwhin9" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="users"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-101">
+    <changeSet author="Teemo (generated)" id="1669213131886-140">
         <addForeignKeyConstraint baseColumnNames="author_id" baseTableName="books" constraintName="fkfjixh2vym2cvfj3ufxj91jem7" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="authors"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-102">
+    <changeSet author="Teemo (generated)" id="1669213131886-141">
         <addForeignKeyConstraint baseColumnNames="book_id" baseTableName="balance_transaction" constraintName="fkfmqooydnad6dlf5jjhx1mmqft" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="book"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-103">
-        <addForeignKeyConstraint baseColumnNames="book_id" baseTableName="books_likes" constraintName="fkg6ljgxckbb22jkje8aiknu432" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="books"/>
-    </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-104">
-        <addForeignKeyConstraint baseColumnNames="book_id" baseTableName="book_file" constraintName="fkg7meofferi2glg6uwj2yhfmp9" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="books"/>
-    </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-105">
-        <addForeignKeyConstraint baseColumnNames="book_id" baseTableName="book_review" constraintName="fkgme5o68sylsmw5hw0ys2x8iw8" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="books"/>
-    </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-106">
+    <changeSet author="Teemo (generated)" id="1669213131886-142">
         <addForeignKeyConstraint baseColumnNames="tag_id" baseTableName="books" constraintName="fkh520nu5kcv5fxxa6jv437ygc4" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="tags"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-107">
+    <changeSet author="Teemo (generated)" id="1669213131886-143">
         <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="users" constraintName="fkk8j232n4cukq47ao9w5hy6sim" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="message"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-108">
-        <addForeignKeyConstraint baseColumnNames="genre_id" baseTableName="book2genre" constraintName="fkkdc8kcprnkl4ygg2f0v9588wi" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="genre"/>
-    </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-109">
+    <changeSet author="Teemo (generated)" id="1669213131886-144">
         <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="balance_transaction" constraintName="fkndi1dijwreoyd8stngrabtx8m" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="users"/>
     </changeSet>
-    <changeSet author="Teemo (generated)" id="1671042483375-110">
+    <changeSet author="Teemo (generated)" id="1669213131886-145">
         <addForeignKeyConstraint baseColumnNames="user_id" baseTableName="book_review" constraintName="fkntncp0b191bex8jkm3vy3l13x" deferrable="false" initiallyDeferred="false" onDelete="NO ACTION" onUpdate="NO ACTION" referencedColumnNames="id" referencedTableName="users"/>
     </changeSet>
 </databaseChangeLog>

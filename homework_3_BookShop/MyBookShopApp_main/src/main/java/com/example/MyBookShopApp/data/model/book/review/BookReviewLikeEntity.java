@@ -1,6 +1,7 @@
 package com.example.MyBookShopApp.data.model.book.review;
 
 import com.example.MyBookShopApp.data.model.user.UserEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
@@ -27,6 +28,7 @@ public class BookReviewLikeEntity {
 
     @ManyToOne
     @JoinColumn(name = "user_id", insertable = false, updatable = false)
+    @JsonIgnore
     private UserEntity user;
 
     public BookReviewLikeEntity() {
