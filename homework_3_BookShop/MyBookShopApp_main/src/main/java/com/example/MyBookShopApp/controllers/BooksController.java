@@ -9,6 +9,7 @@ import com.example.MyBookShopApp.service.BookLikeService;
 import com.example.MyBookShopApp.service.BookReviewLikeService;
 import com.example.MyBookShopApp.service.BookReviewService;
 import com.example.MyBookShopApp.service.BookService;
+import com.example.MyBookShopApp.utils.MappingUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.HttpHeaders;
@@ -33,18 +34,20 @@ public class BooksController {
     private final BookService bookService;
     private final BookReviewService bookReviewService;
     private final BookReviewLikeService bookReviewLikeService;
+    private final MappingUtils mappingUtils;
 
     @Autowired
     public BooksController(ResourceStorage storage,
                            BookLikeService bookLikeService,
                            BookService bookService,
                            BookReviewService bookReviewService,
-                           BookReviewLikeService bookReviewLikeService) {
+                           BookReviewLikeService bookReviewLikeService, MappingUtils mappingUtils) {
         this.storage = storage;
         this.bookLikeService = bookLikeService;
         this.bookService = bookService;
         this.bookReviewService = bookReviewService;
         this.bookReviewLikeService = bookReviewLikeService;
+        this.mappingUtils = mappingUtils;
     }
 
     @GetMapping("/{slug}")

@@ -1,11 +1,13 @@
 package com.example.MyBookShopApp.service.impl;
 
 import com.example.MyBookShopApp.data.Book;
+import com.example.MyBookShopApp.data.dto.BookDto;
 import com.example.MyBookShopApp.data.model.book.BookLikeEntity;
 import com.example.MyBookShopApp.data.model.book.review.BookReviewEntity;
 import com.example.MyBookShopApp.errs.BookstoreApiWrongParameterException;
 import com.example.MyBookShopApp.repository.BookRepository;
 import com.example.MyBookShopApp.service.BookReviewLikeService;
+import com.example.MyBookShopApp.utils.MappingUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -21,11 +23,15 @@ public class BookServiceImpl implements com.example.MyBookShopApp.service.BookSe
 
     private final BookRepository bookRepository;
     private final BookReviewLikeService bookReviewLikeService;
+    private final MappingUtils mappingUtils;
 
     @Autowired
-    public BookServiceImpl(BookRepository bookRepository, BookReviewLikeService bookReviewLikeService) {
+    public BookServiceImpl(BookRepository bookRepository,
+                           BookReviewLikeService bookReviewLikeService,
+                           MappingUtils mappingUtils) {
         this.bookRepository = bookRepository;
         this.bookReviewLikeService = bookReviewLikeService;
+        this.mappingUtils = mappingUtils;
     }
 
     public List<Book> getBooksData() {
